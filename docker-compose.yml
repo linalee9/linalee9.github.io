@@ -1,0 +1,14 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+    command: bundle exec jekyll serve --host=0.0.0.0 --livereload
+    working_dir: /docs
+    volumes:
+      - .:/docs
+    ports:
+      - 4000:4000
+      - 35729:35729
+      - 3000:3000
+      - 80:4000

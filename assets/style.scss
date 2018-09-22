@@ -1,0 +1,21 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Import partials from `sass_dir` and set theme here
+@import
+        "theme-{{ site.theme_color | default: "black" }}.scss"
+;
+
+.math-display {
+    line-height: 1.5;
+    margin-bottom: 1em;
+    display: inline-block;
+    width: 100%;
+    font: normal 1.4em KaTeX_Main, Times New Roman, serif;
+    line-height: 1.2;
+    text-indent: 0;
+    text-rendering: auto;
+    text-align: center;
+}
