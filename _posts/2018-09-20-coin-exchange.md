@@ -12,6 +12,7 @@ p_1\cdot c_1 + p_2\cdot c_2+\cdots + p_k\cdot c_k = m.
 $$
 
 ## Coin exchange
+
 If $c_i$'s are coin values, then the answer is equal to the total number of ways to make changes for value $m$.
 
 ## Example
@@ -27,7 +28,8 @@ $$
 \end{aligned}
 $$
 
-# Solution
+## Solution
+
 Let $A_m(c_1,\dots,c_k)$ be the answer to the question. Then we have
 
 $$ \begin{aligned}
@@ -50,7 +52,6 @@ A_n(c_1) = \begin{cases}
 \end{cases}
 $$
 
-
 We can get $A_n(c_1, c_2)$ for all $n\le m$ as follows:
 
 $$
@@ -66,6 +67,7 @@ We continue subtracting multiples of $c_2$ from $n$ until the first term becomes
 The value for $A_n(c_1, c_2, c_3)$ can be found in a similar way.
 
 ## Programming
+
 This solution can be written up in python as follows.
 
 ```python
@@ -81,11 +83,12 @@ def get_ways(target: int, coins: List[int]) -> int:
     return ways[target]
 ```
 
-# Geometric Viewpoint
+## Geometric Viewpoint
 
 If $k=2$, then the solution equals the number of points with integer coordinates on the line $c_1x + c_2y=m$ in $\mathbb R^2$ in the first quadrant.
 
 If $k=3$, then the solution equals the number of points with integer coordinates on the hyperplane $c_1x + c_2y+ c_3z = m$ in $\mathbb R^3$ in the first octant. 
 
-### References
+## References
+
 - [hackerrank.com](https://www.hackerrank.com/challenges/coin-change/problem)
