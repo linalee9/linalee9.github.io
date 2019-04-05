@@ -3,6 +3,7 @@ layout: post
 title:  "Hosting a static website on S3"
 categories: tech
 tag: aws
+published: false
 ---
 1. Set up an AWS account and create a S3 bucket. The S3 bucket will be configured later to host a public website.
 2. Suppose the website files are inside `/www` folder which is inside `/docs`, i.e., the site files are inside `/docs/www`. Go to `/docs` folder.

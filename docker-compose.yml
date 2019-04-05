@@ -3,7 +3,7 @@ services:
   app:
     build:
       context: .
-    command: bundle exec jekyll serve --host=0.0.0.0 --livereload
+    command: bundle exec jekyll serve --host=0.0.0.0 --livereload --drafts --unpublished
     working_dir: /docs
     volumes:
       - .:/docs
