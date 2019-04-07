@@ -4,7 +4,8 @@ title: Linear Regression
 ---
 
 # Question
-Given a set of data $(\vec x^j, y^j)$, $1\le j\le m$, $\vec x^j\in\mathbb R^n, y^j\in\mathbb R$, find $\vec\theta\in\mathbb R^n$ that minimizes mean squared error:
+
+Given a set of data $$(\vec x^j, y^j)$$, $$1\le j\le m$$, $$\vec x^j\in\mathbb R^n, y^j\in\mathbb R$$, find $$\vec\theta\in\mathbb R^n$$ that minimizes mean squared error:
 
 $$
 \begin{pmatrix}
@@ -24,7 +25,7 @@ y^m
 \end{pmatrix}
 $$
 
-$X\in\mathbb R^{m\times n}$, $\vec y\in\mathbb R^{m\times 1}$, $\vec \theta\in \mathbb R^{n\times 1}$.
+$$X\in\mathbb R^{m\times n}$$, $$\vec y\in\mathbb R^{m\times 1}$$, $$\vec \theta\in \mathbb R^{n\times 1}$$.
 
 $$
 E = (X\vec\theta - \vec y)^T (X\vec\theta - \vec y)
@@ -34,7 +35,7 @@ $$
 \frac{\partial E}{\partial\theta_j} = 0 \quad \forall j
 $$
 
-Let $A\in\mathbb R^{m\times n}$, $\theta\in\mathbb R^n$, and denote the $j$-the column of $A$ as $A_{*j}\in\mathbb R^{m\times 1}$ and the $j$-th row of $A$ as $A_{j*}\in\mathbb R^{1\times n}$. Then we have
+Let $A\in\mathbb R^{m\times n}$, $\theta\in\mathbb R^n$, and denote the $j$-the column of $A$ as $$A_{*j}\in\mathbb R^{m\times 1}$$ and the $j$-th row of $A$ as $A_{j*}\in\mathbb R^{1\times n}$. Then we have
 
 $$
 \begin{gathered}
