@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Eiegen values of symmetric matrices are real
+title: Eiegen values of symmetric matrices
 ---
 
 # Claim
