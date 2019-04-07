@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Eiegen values of symmetric matrices
+title: Eigenvalues of symmetric matrices
 ---
 
 # Claim
