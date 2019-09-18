@@ -28,7 +28,7 @@ markdown: kramdown
 remote_theme: linalee9/swiss
 plugins:
   - jekyll-feed
-
+repository: linalee9/linalee9.github.io
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
