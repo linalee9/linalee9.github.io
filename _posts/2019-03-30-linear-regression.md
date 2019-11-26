@@ -65,7 +65,7 @@ $$
 
 <!-- [post]({{ site.baseurl }}{% post_url 2019-03-27-matrix-operation %}) -->
 
-Let $A\in\mathbb R^{m\times n}$ and denote the $j$-the column of $A$ as $A_{*j}\in\mathbb R^{m\times 1}$ and the $j$-th row of $A$ as $A_{j*}\in\mathbb R^{1\times n}$. Then we have
+Let $A\in\mathbb R^{m\times n}$ and denote the $j$-the column of $A$ as $$A_{*j}\in\mathbb R^{m\times 1}$$ and the $j$-th row of $A$ as $$A_{j*}\in\mathbb R^{1\times n}$$. Then we have
 
 <!-- $$
 \begin{gathered}
@@ -101,8 +101,9 @@ $$
 If $X^TX$ is invertible, we have
 
 $$
-\vec\theta = (X^TX)^{-1} X^T \vec y, \tag{3}
+\vec\theta = (X^TX)^{-1} X^T \vec y,\tag{3}
 $$
+
 which is called the **normal equation** for the system.
 
 ### When is $X^TX$ invertible?
