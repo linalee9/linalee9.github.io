@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Linear Regression
+title: Linear Regression - normal equation
 category: ml
 ---
 
@@ -12,18 +12,18 @@ $$
 \hat y_i = x_{i,1}\theta_1 + x_{i,2}\theta_2 + \cdots + x_{i,n}\theta_n,\quad\forall i \in [1, m]\tag{1}
 $$
 
-then it minimizes the mean squared error given as follows:
+then it minimizes the squared error given as follows:
 
 $$
 E = \sum_{i=1}^n \big|\hat y_i - y_i\big|^2\tag{2}
 $$
 
-### Exploration
+### Normal Equation
 
 We can rewrite $(1)$ as follows:
 
 $$
-\hat y = X\theta,
+\hat y = X\vec\theta,
 $$
 
 where
@@ -40,7 +40,7 @@ X =\begin{pmatrix}  x_{1,1} &  x_{1,2} &\cdots & x_{1,n}\\
 \vdots&\vdots&\ddots&\vdots\\
  x_{m, 1} &  x_{m, 2} & \cdots &  x_{m, n}
 \end{pmatrix},\quad
-\theta = \begin{pmatrix}
+\vec\theta = \begin{pmatrix}
 \theta_1\\
 \theta_2\\
 \vdots\\
@@ -52,22 +52,22 @@ Also $(2)$ can be rewritten as
 
 $$
 \begin{aligned}
-E &= \Vert\hat y - y\Vert^2 = \Vert X\theta - y\Vert^2 = (X\theta - y)^T(X\theta - y)\\
-&= \theta^TX^TX\theta -\theta^TX^Ty - y^TX\theta + y^Ty
+E &= \Vert\hat y - y\Vert^2 = \Vert X\vec\theta - y\Vert^2 = (X\vec\theta - y)^T(X\vec\theta - y)\\
+&= \vec\theta^TX^TX\vec\theta -\vec\theta^TX^Ty - y^TX\vec\theta + y^Ty
 \end{aligned}
 $$
 
-To find $\theta$ that minimizes $E$, we need to solve
+To find $\vec\theta$ that minimizes $E$, we need to solve
 
 $$
 \frac{\partial E}{\partial\theta_j} = 0, \quad j = 1,\dots, n
 $$
 
-[post]({{ site.baseurl }}{% post_url 2019-03-27-matrix-operation %})
+<!-- [post]({{ site.baseurl }}{% post_url 2019-03-27-matrix-operation %}) -->
 
-Let $A\in\mathbb R^{m\times n}$, $\theta\in\mathbb R^n$, and denote the $j$-the column of $A$ as $$A_{*j}\in\mathbb R^{m\times 1}$$ and the $j$-th row of $A$ as $A_{j*}\in\mathbb R^{1\times n}$. Then we have
+Let $A\in\mathbb R^{m\times n}$ and denote the $j$-the column of $A$ as $A_{*j}\in\mathbb R^{m\times 1}$ and the $j$-th row of $A$ as $A_{j*}\in\mathbb R^{1\times n}$. Then we have
 
-$$
+<!-- $$
 \begin{gathered}
 \frac{\partial}{\partial\theta_j} (A\vec\theta) = \frac{\partial}{\partial\theta_j} \sum_i \theta_i A_{*i} = A_{*j},\\
 \frac{\partial}{\partial\theta_j} (\vec\theta^T A^T) = 
@@ -78,11 +78,11 @@ $$
 $$
 E = \vec\theta^T X^T X\vec \theta - \vec\theta^T X^T \vec y - \vec y^T X\vec\theta + \|\vec y \|^2
 $$
-and
+and -->
 
 $$
 \frac{\partial E}{\partial \theta_j} =
-(X^TX\vec\theta)_{j*} - (\vec\theta ^T X^TX)_{*j} - (X^T\vec y)_{j*}-(\vec y^T X)_{*j}
+(X^TX\vec\theta)_{j*} + (\vec\theta ^T X^TX)_{*j} - (X^T\vec y)_{j*}-(\vec y^T X)_{*j}
 $$
 
 Note that the shape of $X^TX\vec\theta$ is $n\times 1$ and the shape of $\vec\theta^T X^TX$ is $1\times n$ and also that $\vec\theta^TX^TX = (X^TX\vec\theta)^T$. Hence we get
@@ -98,13 +98,14 @@ $$
 X^TX\vec\theta = X^T\vec y
 $$
 
-If $X^TX$ is invertible, we can say
+If $X^TX$ is invertible, we have
 
 $$
-\vec\theta = (X^TX)^{-1} X^T \vec y
+\vec\theta = (X^TX)^{-1} X^T \vec y, \tag{3}
 $$
+which is called the **normal equation** for the system.
 
-## When is $X^TX$ invertible?
+### When is $X^TX$ invertible?
 
 The following conditions are equivalent:
 
