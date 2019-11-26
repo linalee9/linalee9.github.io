@@ -63,22 +63,7 @@ $$
 \frac{\partial E}{\partial\theta_j} = 0, \quad j = 1,\dots, n
 $$
 
-<!-- [post]({{ site.baseurl }}{% post_url 2019-03-27-matrix-operation %}) -->
-
 Let $A\in\mathbb R^{m\times n}$ and denote the $j$-the column of $A$ as $$A_{*j}\in\mathbb R^{m\times 1}$$ and the $j$-th row of $A$ as $$A_{j*}\in\mathbb R^{1\times n}$$. Then we have
-
-<!-- $$
-\begin{gathered}
-\frac{\partial}{\partial\theta_j} (A\vec\theta) = \frac{\partial}{\partial\theta_j} \sum_i \theta_i A_{*i} = A_{*j},\\
-\frac{\partial}{\partial\theta_j} (\vec\theta^T A^T) = 
-\frac{\partial}{\partial\theta_j} \sum_i \theta_i (A^T)_{i*}= (A^T)_{j*} = (A_{*j})^T
-\end{gathered}
-$$
-
-$$
-E = \vec\theta^T X^T X\vec \theta - \vec\theta^T X^T \vec y - \vec y^T X\vec\theta + \|\vec y \|^2
-$$
-and -->
 
 $$
 \frac{\partial E}{\partial \theta_j} =
